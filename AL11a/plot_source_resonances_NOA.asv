@@ -1,0 +1,17 @@
+filename = {['source_rings' filesep 'resonances_no_NOA.mat'],'filter_resonances_NOA_index_1p315_r19100nm_w2800nm.mat','filter_resonances_NOA_index_1p38_r19100nm_w2800nm.mat','filter_resonances_NOA_index_1p48_r19100nm_w2800nm.mat','filter_resonances_NOA_index_1p48_r19100nm_w2800nm.mat'['source_rings' filesep 'resonances_NOA_index_1p56.mat']};
+for ii=1:length(filename) 
+    load(filename{ii});
+    y = ones(1,length(lambda_res));
+    stem(lambda_res,y,'LineWidth',2);
+    %legend(filename{ii});
+%     for kk = 1:length(lambda_res)
+%         text(lambda_res(kk),y,num2str(lambda_res(kk)));
+%     end
+    hold on
+end
+legend('no NOA','NOA index 1.315','NOA index 1.38','NOA index 1.48','NOA_index_1.52','NOA index 1.56')
+
+title('ROut=19100nm, Width=2800nm')
+set(gcf,'Color','w')
+%imagesc(SZ.N.x, SZ.N.y, (SZ.N.n).'); set(gca, 'YDir', 'normal');
+%colorbar; %creates a picture of the layer stack
